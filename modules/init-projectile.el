@@ -11,9 +11,14 @@
 ;;; Code:
 
 (elpaca-use-package projectile
-  :init (projectile-mode +1)
+  :ensure t
+  :init
+  (projectile-mode +1)
+  (message "init projectile")
   :bind (:map projectile-mode-map
-	 ("C-c C-p" . projectile-command-map)))
+	      ("C-c p" . projectile-command-map))
+  :bind (:map projectile-command-map
+	      ("A" . projectile-add-known-project)))
 
 (provide 'init-projectile)
 

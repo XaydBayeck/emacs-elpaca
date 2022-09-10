@@ -65,7 +65,7 @@
           treemacs-user-mode-line-format           nil
           treemacs-user-header-line-format         nil
           treemacs-wide-toggle-width               70
-          treemacs-width                           35
+          treemacs-width                           30
           treemacs-width-increment                 1
           treemacs-width-is-initially-locked       t
           treemacs-workspace-switch-cleanup        nil)
@@ -98,27 +98,27 @@
         ("C-x t C-t" . treemacs-find-file)
         ("C-x t M-t" . treemacs-find-tag)))
 
-(elpaca-use-package treemacs-projectile
-  :after (treemacs projectile)
-  :ensure t)
+;; (elpaca-use-package treemacs-projectile
+;;   :after (treemacs projectile)
+;;   :ensure t)
 
-(elpaca-use-package treemacs-icons-dired
-  :hook (dired-mode . treemacs-icons-dired-enable-once)
-  :ensure t)
+;; (elpaca-use-package treemacs-icons-dired
+;;   :hook (dired-mode . treemacs-icons-dired-enable-once)
+;;   :ensure t)
 
 ;; (use-package treemacs-magit
 ;;   :after (treemacs magit)
 ;;   :ensure t)
 
-(elpaca-use-package treemacs-persp ;;treemacs-perspective if you use perspective.el vs. persp-mode
-  :after (treemacs persp-mode) ;;or perspective vs. persp-mode
-  :ensure t
-  :config (treemacs-set-scope-type 'Perspectives))
+;; (elpaca-use-package treemacs-persp ;;treemacs-perspective if you use perspective.el vs. persp-mode
+;;   :after (treemacs persp-mode) ;;or perspective vs. persp-mode
+;;   :ensure t
+;;   :config (treemacs-set-scope-type 'Perspectives))
 
-(elpaca-use-package treemacs-tab-bar ;;treemacs-tab-bar if you use tab-bar-mode
-  :after (treemacs)
-  :ensure t
-  :config (treemacs-set-scope-type 'Tabs))
+;; (elpaca-use-package treemacs-tab-bar ;;treemacs-tab-bar if you use tab-bar-mode
+;;   :after (treemacs)
+;;   :ensure t
+;;   :config (treemacs-set-scope-type 'Tabs))
 
 (provide 'init-treemacs)
 

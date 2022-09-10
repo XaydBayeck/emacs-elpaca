@@ -6,11 +6,18 @@
 ;;
 
 ;;; Code:
-(defun meow-setup ()
+(elpaca-use-package meow
+  :ensure t
+  :init
+  (meow-global-mode 1)
+  :config
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
+  (setq meow-keypad-leader-dispatch "C-c")
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
    '("k" . meow-prev)
+   '("P" . meow-page-up)
+   '("N" . meow-page-down)
    '("<escape>" . ignore))
   (meow-leader-define-key
    ;; SPC j/k will run the original command in MOTION state.
@@ -27,8 +34,8 @@
    '("8" . meow-digit-argument)
    '("9" . meow-digit-argument)
    '("0" . meow-digit-argument)
-   '("/" . meow-digit-argument)
-   '("?" . meow-digit-argument))
+   '("/" . meow-keypad-describe-key)
+   '("?" . meow-cheatsheet))
   (meow-normal-define-key
    '("0" . meow-expand-0)
    '("1" . meow-expand-1)
@@ -93,10 +100,6 @@
    '("z" . meow-pop-selection)
    '("'" . repeat)
    '("<escape>" . ignore)))
-(elpaca-queue (elpaca '(meow :host github :repo "meow-edit/meow")
-		(require 'meow)
-		(meow-setup)
-		(meow-global-mode 1)))
 
 (provide 'init-meow)
 

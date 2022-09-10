@@ -27,39 +27,15 @@
        (display-buffer buffer)))))
 (require 'elpaca-autoloads)
 (add-hook 'after-init-hook #'elpaca-process-queues)
-(elpaca (elpaca :host github :repo "progfolio/elpaca" :build (:not activate-package)))
+(elpaca (elpaca :host github :repo "progfolio/elpaca"))
+(setq package-enable-at-startup nil)
               ;; Add pending MELPA packages
 (elpaca-queue (elpaca '(melpulls :host github :repo "progfolio/melpulls")
                 (add-to-list 'elpaca-menu-functions #'melpulls)))
 ;; Install a package from a user-provided recipe
 (elpaca (yodel :host github :repo "progfolio/yodel"))
 ;; Install use-package
-(elpaca-queue (elpaca 'use-package 
-                (require 'use-package)
-                ;; A few more useful configurations... 
-                (use-package emacs 
-                  :init 
-                  ;; Add prompt indicator to `completing-read-multiple'. 
-                  ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma. 
-                  (defun crm-indicator (args) 
-                    (cons (format "[CRM%s] %s" 
-                            (replace-regexp-in-string 
-                              "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" "" 
-                              crm-separator) 
-                            (car args)) 
-                          (cdr args))) 
-                  (advice-add #'completing-read-multiple :filter-args #'crm-indicator) 
-                  ;; Do not allow the cursor in the minibuffer prompt
-                  (setq minibuffer-prompt-properties 
-                        '(read-only t cursor-intangible t face minibuffer-prompt)) 
-                  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode) 
-
-                  ;; Emacs 28: Hide commands in M-x which do not work in the current mode. 
-                  ;; Vertico commands are hidden in normal buffers. 
-                  ;; (setq read-extended-command-predicate 
-                  ;; #'command-completion-default-include-p) 
-                  ;; Enable recursive minibuffers 
-                  (setq enable-recursive-minibuffers t))))
+(elpaca use-package (require 'use-package))
 
 (defmacro use-feature (name &rest args)
   "Like `use-package' but accounting for asynchronous installation.
@@ -68,5 +44,34 @@ NAME and ARGS are in `use-package'."
   `(elpaca nil (use-package ,name
                  :ensure nil
                  ,@args)))
+;; A few more useful configurations...
+(use-feature emacs
+  :init
+  ;; Add prompt indicator to `completing-read-multiple'.
+  ;; We display [CRM<separator>], e.g., [CRM,] if the separator is a comma.
+  (defun crm-indicator (args)
+    (cons (format "[CRM%s] %s"
+            (replace-regexp-in-string
+              "\\`\\[.*?]\\*\\|\\[.*?]\\*\\'" ""
+              crm-separator)
+            (car args))
+          (cdr args)))
+  (advice-add #'completing-read-multiple :filter-args #'crm-indicator)
+  ;; Do not allow the cursor in the minibuffer prompt
+  (setq minibuffer-prompt-properties
+        '(read-only t cursor-intangible t face minibuffer-prompt))
+  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+
+  ;; Emacs 28: Hide commands in M-x which do not work in the current mode.
+  ;; Vertico commands are hidden in normal buffers.
+  ;; (setq read-extended-command-predicate
+  ;; #'command-completion-default-include-p)
+  ;; Enable recursive minibuffers
+  (setq enable-recursive-minibuffers t))
+
+;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (provide 'init-elpaca)
+
+;;; init-elpaca.el ends here

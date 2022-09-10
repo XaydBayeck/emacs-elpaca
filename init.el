@@ -7,7 +7,7 @@
 
 ;;; Code:
 
-;; Poduce backtraces when errors occur: can be helpful to diagnose startup issues
+;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
 ;; (setq debug-on-error t)
 ;; initiliaze elpaca a package manager
 ;; some configuration
@@ -36,7 +36,10 @@
 (require 'init-check)
 (require 'init-ui)
 (require 'init-projectile)
-;;(require 'init-treemacs)
+(require 'init-treemacs)
+(require 'init-trans)
+(require 'init-magit)
+(require 'init-roam)
 
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file 'no-error 'no-message)

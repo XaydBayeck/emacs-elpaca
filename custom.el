@@ -32,8 +32,12 @@
    '(:foreground default :background default :scale 2.0 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
 		 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(org-preview-latex-default-process 'dvisvgm)
+ '(package-archives
+   '(("gnu" . "https://elpa.gnu.org/packages/")
+     ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+     ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(flycheck markdown-mode auctex dashboard yasnippet sly geiser-chez geiser-guile doom-themes marginalia kind-icon embark-consult))
+   '(simple-httpd websocket org-roam meow treemacs-tab-bar treemacs-persp treemacs-icons-dired treemacs-projectile treemacs projectile flycheck markdown-mode auctex dashboard yasnippet sly geiser-chez geiser-guile doom-themes marginalia kind-icon embark-consult))
  '(safe-local-variable-values '((lexicalbinding . t))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

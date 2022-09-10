@@ -10,7 +10,6 @@
 ;(assq-delete-all 'org package--builtins)
 ;(assq-delete-all 'org package--builtin-versions)
 
-(setq package-enable-at-startup nil)
 
 (setq native-comp-async-report-warnings-errors nil)
 
@@ -49,9 +48,9 @@
 (setq frame-inhibit-implied-resize t)
 
 ;; set default and backup fonts
-(push '(font . "Source Code Pro") default-frame-alist)
-(set-face-font 'default "Source Code Pro")
-(set-face-font 'variable-pitch "DejaVu Sans")
+(push '(font . "Hasklug Nerd Font") default-frame-alist)
+(set-face-font 'default "Hasklug Nerd Font")
+(set-face-font 'variable-pitch "JetBrainsMono Nerd Font")
 (copy-face 'default 'fixed-pitch)
 
 ;; ignore X resources.

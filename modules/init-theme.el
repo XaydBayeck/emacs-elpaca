@@ -19,7 +19,7 @@
   ;; Enable custom neotree theme (all-the-icons must be installed!)
   ;(doom-themes-neotree-config)
   ;; or for treemacs users
-  ;(setq doom-themes-treemacs-theme "doom-atom")
+  (setq doom-themes-treemacs-theme "doom-atom")
   ;(doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)))
