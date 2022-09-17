@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dff
+# key: dff
+# --
+\dfrac{\mathrm{d}$1}{\mathrm{d}$0}
