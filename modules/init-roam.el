@@ -30,7 +30,7 @@
   (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
   (org-roam-db-autosync-mode)
   ;; If using org-roam-protocol
-  ;;(require 'org-roam-protocol)
+  (require 'org-roam-protocol)
   )
 
 (elpaca-use-package websocket
@@ -42,7 +42,7 @@
 
 (elpaca-use-package (org-roam-ui :host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out"))
   :after org-roam
-  :bind (("C-c C-t r" . org-roam-ui-mode))
+  :bind ("C-c t r" . org-roam-ui-mode)
   :config
   (setq org-roam-ui-sync-theme t
 	org-roam-ui-follow t

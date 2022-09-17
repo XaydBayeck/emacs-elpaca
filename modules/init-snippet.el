@@ -12,7 +12,6 @@
   :config
   (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "snippets")))
 
-
 (use-feature autoinsert
   :after yasnippet
   :init
@@ -26,7 +25,8 @@
  :config
  (define-auto-insert "\\.el?$" ["default-lisp.el" autoinsert-yas-expand]))
 
+(elpaca-use-package yasnippet-snippets
+  :after yasnippet)
 
 (provide 'init-snippet)
-
-;; init-snippet.el ends here
+;;; init-snippet.el ends here

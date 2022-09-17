@@ -21,7 +21,18 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    my-org-babel-default-load-languages)
-  (setq org-export-with-tags nil))
+  (setq org-export-with-tags nil
+	org-return-follows-link t)
+  (setq-local electric-pair-pairs '((?\" . ?\")
+				    (?\' . ?\')
+				    (?\“ . ?\”)
+				    (?\‘ . ?\’)
+				    (?\` . ?\`)
+				    (?\( . ?\))
+				    (?\[ . ?\])
+				    (?\（ . ?\）)
+				    (?\《 . ?\》)
+				    (?\{ . ?\}))))
 
 (elpaca-use-package gnuplot
   :init

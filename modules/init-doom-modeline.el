@@ -6,8 +6,15 @@
 ;;
 
 ;;; Code:
-(elpaca-queue (elpaca 'doom-modeline
-		(doom-modeline-mode 1)))
+(elpaca-use-package shrink-path
+  :ensure t
+  :demand t)
+(elpaca-use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :config
+  (setq inhibit-compacting-font-caches t
+	find-file-visit-truename t))
 
 (provide 'init-doom-modeline)
 

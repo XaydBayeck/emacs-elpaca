@@ -11,7 +11,7 @@
 ;;; Code:
 
 (elpaca-use-package (trans-mode :host github :repo "Imymirror/trans-mode")
-  :bind ("C-c C-t t" . trans-mode)
+  :bind ("C-c t t" . trans-mode)
   :custom
   (trans-target "zh" "first target language is zh")
   (trans-scond-target "en" "if source text language code equals first target, use the second target as an alternative.")

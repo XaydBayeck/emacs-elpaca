@@ -155,7 +155,7 @@
   ;; (setq consult-project-function (lambda (_) (vc-root-dir)))
   ;;;; 4. locate-dominating-file
   ;; (setq consult-project-function (lambda (_) (locate-dominating-file "." ".git")))
-)
+  (setq-default completions-in-region-function #'consult-completion-in-region))
 
 (use-feature embark-consult
   :ensure t

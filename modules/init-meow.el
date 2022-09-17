@@ -11,6 +11,8 @@
   :init
   (meow-global-mode 1)
   :config
+  (set-face-background 'meow-search-highlight "#446688")
+  (set-face-background 'meow-beacon-fake-selection "#446688")
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
   (setq meow-keypad-leader-dispatch "C-c")
   (meow-motion-overwrite-define-key

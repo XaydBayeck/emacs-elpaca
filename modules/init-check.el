@@ -9,10 +9,12 @@
 ;; Check Languages' summaries
 ;;
 ;;; Code:
-(elpaca-queue (elpaca flycheck
-               (global-flycheck-mode))
-              (elpaca (flycheck-inline :host github :repo "flycheck/flycheck-inline")
-                (add-hook 'flycheck-mode-hook #'flycheck-inline-mode)))
+(elpaca-use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+(elpaca-use-package (flycheck-inline :host github :repo "flycheck/flycheck-inline")
+  :after flycheck
+  :hook (flycheck-mode . flycheck-inline-mode))
 
 (provide 'init-check)
 

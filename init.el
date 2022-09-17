@@ -20,7 +20,7 @@
 (require 'init-elpaca)
 (require 'init-theme)
 (require 'init-company)
-;;(require 'init-corfu)
+(require 'init-corfu)
 (require 'init-which-key)
 (require 'init-meow)
 (require 'init-doom-modeline)
@@ -32,7 +32,8 @@
 (require 'init-dashboard)
 (require 'init-latex)
 (require 'init-markdown)
-(require 'init-lsp)
+;(require 'init-lsp-bridge)
+(require 'init-eglot)
 (require 'init-check)
 (require 'init-ui)
 (require 'init-projectile)
@@ -40,6 +41,10 @@
 (require 'init-trans)
 (require 'init-magit)
 (require 'init-roam)
+(require 'init-gtd)
+
+;; languages
+(require 'lang/rust)
 
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file 'no-error 'no-message)
