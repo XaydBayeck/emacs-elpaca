@@ -7,9 +7,10 @@
 
 ;;; Code:
 
-(elpaca-queue (elpaca 'which-key
-		(which-key-mode)
-		(which-key-setup-minibuffer)))
+(elpaca-use-package which-key
+  :init
+  (which-key-mode)
+  (which-key-setup-minibuffer))
 
 (provide 'init-which-key)
 

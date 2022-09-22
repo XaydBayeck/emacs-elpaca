@@ -6,7 +6,8 @@
 ;;
 
 ;;; Code:
-(global-linum-mode 1)
+;(global-linum-mode 1)
+(global-display-line-numbers-mode)
 (global-hl-line-mode 1)
 
 ;; format elisp
@@ -66,7 +67,7 @@
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(doom-modeline simple-httpd websocket org-roam meow treemacs-tab-bar treemacs-persp treemacs-icons-dired treemacs-projectile treemacs projectile flycheck markdown-mode auctex dashboard yasnippet sly geiser-chez geiser-guile doom-themes marginalia kind-icon embark-consult))
+   '(eglot doom-modeline simple-httpd websocket org-roam meow treemacs-tab-bar treemacs-persp treemacs-icons-dired treemacs-projectile treemacs projectile flycheck markdown-mode auctex dashboard yasnippet sly geiser-chez geiser-guile doom-themes marginalia kind-icon embark-consult))
  '(safe-local-variable-values '((lexicalbinding . t))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

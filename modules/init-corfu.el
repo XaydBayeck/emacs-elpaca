@@ -21,13 +21,15 @@
   (:map corfu-map
 	      ("SPC" . corfu-insert-separator)
 	      ("C-n" . corfu-next)
-	      ("C-p" . corfu-previous)
-        ("C-c t c" . corfu-auto-switch))
+	      ("C-p" . corfu-previous))
+  :bind ("C-c t c" . corfu-auto-switch)
   ;; :hook (scheme-mode . corfu-mode)
-  ;;       (geiser-repl-mode . corfu-mode))
-  :init 
+  ;;       (geiser-repl-mode . corfu-mode)
+  :init
   (global-corfu-mode)
   (defun corfu-auto-switch ()
+    "Switch corfu auto"
+    (interactive)
     (setq corfu-auto (not corfu-auto))))
 
 (elpaca-use-package corfu-doc
@@ -53,6 +55,7 @@
   (add-to-list 'completion-at-point-functions #'cape-file)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-tex)
+  (add-to-list 'completion-at-point-functions #'cape-symbol)
   (add-to-list 'completion-at-point-functions #'cape-keyword))
 
 ;; Enable indentation+completion using TAB key.

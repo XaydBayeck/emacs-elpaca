@@ -38,7 +38,7 @@
   "Run GC when frame loses focus."
   (run-with-idle-timer
     5 nil
-    (lambda () (unless (frame-focus-state) (arbage-collect)))))
+    (lambda () (unless (frame-focus-state) (garbage-collect)))))
 
 ;; UI
 (push '(menu-bar-lines . 0) default-frame-alist)

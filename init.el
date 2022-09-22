@@ -45,6 +45,7 @@
 
 ;; languages
 (require 'lang/rust)
+(require 'lang/idris2)
 
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el"))
 (load custom-file 'no-error 'no-message)

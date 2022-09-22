@@ -20,6 +20,7 @@
 	      ("C-c l t r" . eglot-reconnect)
 	      ("C-c l t s" . eglot-shutdown)
 	      ("C-c l t S" . eglot-shutdown-all))
+  :hook (prog-mode . eglot-ensure)
   :init
   (setq eglot-sync-connect 1
 	eglot-connect-timeout 10

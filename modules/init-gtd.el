@@ -14,6 +14,7 @@
 ;;; Code:
 
 (use-feature org
+  :defer t
   :bind ("C-c c" . org-capture)
   :config
   (setq org-agenda-files '("~/org/gtd/inbox.org"
