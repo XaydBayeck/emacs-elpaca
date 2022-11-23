@@ -11,6 +11,7 @@
 ;;; Code:
 
 (elpaca-use-package markdown-mode
+  :defer t
   :ensure t
   :mode ("README\\.md'" . gfm-mode)
   :init (setq markdown-command '("pandoc" "--from=markdown" "--to=html5")))

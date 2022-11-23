@@ -15,6 +15,7 @@
     (lisp       . t)))
 
 (elpaca-use-package org
+  :defer t
 ;;  :pin melpa
   :ensure t
   :config
@@ -35,12 +36,13 @@
 				    (?\{ . ?\}))))
 
 (elpaca-use-package gnuplot
+  :defer t
   :init
   (org-babel-do-load-languages
    'org-babel-load-languages
    (cons '(gnuplot . t) my-org-babel-default-load-languages)))
 
-(elpaca-use-package org-contrib)
+(elpaca-use-package org-contrib :defer t)
 ;;  :pin nongnu)
 
 (setq org-todo-keywords
@@ -51,6 +53,7 @@
 
 ;; pretty
 (elpaca-use-package org-superstar
+  :defer t
   :hook (org-mode . org-superstar-mode)
   :config
   ;;; Titles and Sections
@@ -92,8 +95,9 @@
 ;; pretty done
 
 ;; edit
-(elpaca-use-package org-edit-latex)
+(elpaca-use-package org-edit-latex :defer t :after org)
 (elpaca-use-package org-download
+  :defer t
   :after org
   :config
   (defun zz/org-download-paste-clipboard (&optional use-default-filename)

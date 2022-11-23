@@ -19,7 +19,7 @@
          ("C-x C-l C-i" . lsp-bridge-find-impl)
          ("C-x C-l C-r" . lsp-bridge-rename)
          ("C-x C-l C-r" . lsp-bridge-rename)
-         ("M-d" . lsp-bridge-lookup-documentation)
+         ("M-d" . lsp-bridge-popup-documentation)
          ("M-j" . lsp-bridge-popup-documentation-scroll-up)
          ("M-k" . lsp-bridge-popup-documentation-scroll-down)
          ("C-j" . acm-doc-scroll-up)

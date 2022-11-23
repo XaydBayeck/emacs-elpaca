@@ -7,11 +7,11 @@
 
 ;;; Code:
 (elpaca-use-package corfu
-  :defer t
+  :ensure t
   :custom
   (corfu-separator ?\s)
   ;(corfu-preview-current nil)
-  (corfu-auto t)
+  (corfu-auto nil)
   (corfu-on-exact-match nil)
   (corfu-quit-no-match 'separator)
   (corfu-preselect-first t)
@@ -33,6 +33,8 @@
     (setq corfu-auto (not corfu-auto))))
 
 (elpaca-use-package corfu-doc
+  :ensure t
+  :defer t
   :after corfu
   :hook (corfu-mode . corfu-doc-mode)
   :bind
@@ -42,6 +44,7 @@
         ("M-d" . corfu-doc-toggle)))
 
 (elpaca-use-package kind-icon
+  :defer t
   :ensure t
   :after corfu
   :custom
@@ -50,6 +53,7 @@
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (elpaca-use-package cape
+  :ensure t
   :defer t
   :init
   (add-to-list 'completion-at-point-functions #'cape-file)

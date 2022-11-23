@@ -11,6 +11,7 @@
 ;;; Code:
 
 (elpaca-use-package rustic
+  :ensure t
   :defer t
   :config
   (push 'rustic-clippy flycheck-checkers))

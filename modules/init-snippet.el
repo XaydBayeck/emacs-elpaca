@@ -7,12 +7,14 @@
 
 ;;; Code:
 (elpaca-use-package yasnippet
+  :defer t
   :ensure t
   :init (yas-global-mode 1)
   :config
   (add-to-list 'yas-snippet-dirs (locate-user-emacs-file "snippets")))
 
 (use-feature autoinsert
+  :defer t
   :after yasnippet
   :init
   ;; Don't want to be prompted before insertion:
@@ -26,6 +28,7 @@
  (define-auto-insert "\\.el?$" ["default-lisp.el" autoinsert-yas-expand]))
 
 (elpaca-use-package yasnippet-snippets
+  :defer t
   :after yasnippet)
 
 (provide 'init-snippet)

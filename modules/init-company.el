@@ -7,6 +7,7 @@
 
 ;;; Code:
 (elpaca-use-package vertico
+  :ensure t
   :init
   (vertico-mode))
 
@@ -23,7 +24,7 @@
   ;; :bind (("M-A" . marginalia-cycle)
   ;; 	 :map minibuffer-local-map
   ;; 	 ("M-A" . marginalia-cycle))
-  :config
+  :init
   (marginalia-mode))
 
 (elpaca-use-package embark

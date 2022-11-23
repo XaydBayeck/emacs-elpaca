@@ -11,16 +11,20 @@
 ;;
 
 (elpaca-use-package eglot
+  :ensure t
   :commands eglot eglot-ensure
   :bind (:map eglot-mode-map
 	      ("C-c l r" . eglot-rename)
 	      ("C-c l a" . eglot-code-actions)
 	      ("C-c l k" . eldoc)
-	      ("C-c l f" . eglot-format)
+	      ("C-c l f" . eglot-format-buffer)
 	      ("C-c l t r" . eglot-reconnect)
 	      ("C-c l t s" . eglot-shutdown)
 	      ("C-c l t S" . eglot-shutdown-all))
-  :hook (prog-mode . eglot-ensure)
+  :hook ((haskell-mode . eglot-ensure)
+	 (rustic-mode . eglot-ensure)
+	 (rust-mode . eglot-ensure)
+	 (idris2-mode . eglot-ensure))
   :init
   (setq eglot-sync-connect 1
 	eglot-connect-timeout 10
@@ -30,6 +34,11 @@
 (elpaca-use-package consult-eglot
   :after eglot
   :defer t)
+
+;; (elpaca-use-package eldoc-box
+;;   :defer t
+;;   :ensure eglot
+;;   :hook (eglot-managed-mode . elodc-box-hover-mode))
 
 (provide 'init-eglot)
 

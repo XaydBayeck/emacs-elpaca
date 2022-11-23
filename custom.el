@@ -11,9 +11,9 @@
 (global-hl-line-mode 1)
 
 ;; format elisp
-(elpaca-use-package elisp-format
-  :init
-  (require 'elisp-format))
+;; (elpaca-use-package elisp-format
+;;   :init
+;;   (require 'elisp-format))
 
 ;; quick open configuration file
 (defun open-init-file ()
@@ -67,8 +67,11 @@
      ("nongnu" . "https://elpa.nongnu.org/nongnu/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(eglot doom-modeline simple-httpd websocket org-roam meow treemacs-tab-bar treemacs-persp treemacs-icons-dired treemacs-projectile treemacs projectile flycheck markdown-mode auctex dashboard yasnippet sly geiser-chez geiser-guile doom-themes marginalia kind-icon embark-consult))
- '(safe-local-variable-values '((lexicalbinding . t))))
+   '(rustic cape corfu-doc indent-guide which-key corfu vertico eglot doom-modeline simple-httpd websocket org-roam meow treemacs-tab-bar treemacs-persp treemacs-icons-dired treemacs-projectile treemacs projectile flycheck markdown-mode auctex dashboard yasnippet sly geiser-chez geiser-guile doom-themes marginalia kind-icon embark-consult))
+ '(safe-local-variable-values
+   '((haskell-process-use-ghci . t)
+     (haskell-indent-spaces . 4)
+     (lexicalbinding . t))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

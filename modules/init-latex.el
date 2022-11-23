@@ -24,6 +24,7 @@
         (setq TeX-command-default "XeLaTeX"))))
                                            
 (elpaca-use-package cdlatex
+  :defer t
   :ensure auctex
   :init (require 'cdlatex)
   :hook (LaTeX-mode . turn-on-cdlatex)

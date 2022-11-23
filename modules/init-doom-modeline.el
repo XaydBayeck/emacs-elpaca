@@ -6,10 +6,11 @@
 ;;
 
 ;;; Code:
-(elpaca-use-package shrink-path
-  :ensure t
-  :demand t)
+;; (elpaca-use-package shrink-path
+;;   :ensure t
+;;   :demand t)
 (elpaca-use-package doom-modeline
+  :defer t
   :ensure t
   :init (doom-modeline-mode 1)
   :config

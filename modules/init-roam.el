@@ -11,11 +11,12 @@
 ;; It should also work as a plug-and-play solution for anyone already using Org-mode for their personal wiki.
 ;;
 ;;; Code:
-(elpaca-use-package emacsql :ensure t :defer t)
-(elpaca-use-package emacsql-sqlite :ensure t :defer t)
+;; (elpaca-use-package emacsql :ensure t :defer t)
+;; (elpaca-use-package emacsql-sqlite :ensure t :defer t)
 ;;(elpaca-use-package magit-section)
 
 (elpaca-use-package org-roam
+  :defer t
   :ensure t
   :custom
   (org-roam-directory (file-truename "~/org/roam/"))
@@ -33,14 +34,15 @@
   (require 'org-roam-protocol)
   )
 
-(elpaca-use-package websocket
-  :ensure t
-  :defer t)
-(elpaca-use-package simple-httpd
-  :ensure t
-  :defer t)
+;; (elpaca-use-package websocket
+;;   :ensure t
+;;   :defer t)
+;; (elpaca-use-package simple-httpd
+;;   :ensure t
+;;   :defer t)
 
 (elpaca-use-package (org-roam-ui :host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out"))
+  :defer t
   :after org-roam
   :bind ("C-c t r" . org-roam-ui-mode)
   :config

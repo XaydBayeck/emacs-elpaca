@@ -6,7 +6,7 @@
 ;;
 
 ;;; Code:
-(elpaca-use-package sly :ensure t)
+(elpaca-use-package sly :ensure t :defer t)
 
 (provide 'init-sly)
 

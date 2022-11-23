@@ -22,6 +22,7 @@
 ;;   (set-face-background 'highlight-indentation-current-column-face "#c3b3b3"))
 
 (elpaca-use-package (indent-guide :host github :repo "zk-phi/indent-guide")
+  :ensure t
   :init (indent-guide-global-mode)
   :config
   (set-face-foreground 'indent-guide-face "#6688aa")

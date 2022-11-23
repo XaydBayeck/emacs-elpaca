@@ -7,11 +7,12 @@
 
 ;;; Code:
 
-(elpaca-queue
- (elpaca 'doom-themes
+ (elpaca-use-package doom-themes
+  :ensure t
+  :config
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t
-	doom-themes-enable-italic t)
+	      doom-themes-enable-italic t)
   (load-theme 'doom-nord-aurora t)
   ;(load-theme 'doom-dark+ t)
   
@@ -23,7 +24,7 @@
   (setq doom-themes-treemacs-theme "doom-atom")
   ;(doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config)))
+  (doom-themes-org-config))
   ;;(load-theme "doom-nord"))
 
 (provide 'init-theme)

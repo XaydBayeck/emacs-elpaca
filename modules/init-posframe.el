@@ -10,7 +10,7 @@
 ;;
 ;;; Code:
 
-(elpaca-use-package posframe)
+(elpaca-use-package posframe :defer t)
 
 (provide 'init-posframe)
 

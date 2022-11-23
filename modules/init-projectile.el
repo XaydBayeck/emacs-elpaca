@@ -11,6 +11,7 @@
 ;;; Code:
 
 (elpaca-use-package projectile
+  :defer t
   :ensure t
   :init
   (projectile-mode +1)

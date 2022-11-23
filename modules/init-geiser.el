@@ -9,8 +9,10 @@
 (elpaca-queue
  (elpaca 'geiser
    (elpaca-use-package geiser-chez
+     :defer t
      :ensure t)
    (elpaca-use-package geiser-guile
+     :defer t
      :ensure t
      :config
      (when (executable-find "guix")
@@ -18,6 +20,7 @@
         (expand-file-name "~/.config/guix/current/share/guile/site/3.0"))))))
 
 (elpaca-use-package macrostep-geiser
+  :defer t
   :hook (geiser-mode . macrostep-geiser-setup)
   :hook (geiser-repl-mode . macrostep-geiser-setup))
 
