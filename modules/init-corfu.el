@@ -30,7 +30,9 @@
   (defun corfu-auto-switch ()
     "Switch corfu auto"
     (interactive)
-    (setq corfu-auto (not corfu-auto))))
+    (let ((old-state corfu-auto))
+      (setq corfu-auto (not corfu-auto))
+      (message "corfu-auto turn from %s to %s" old-state corfu-auto))))
 
 (elpaca-use-package corfu-doc
   :ensure t
@@ -68,4 +70,4 @@
 
 (provide 'init-corfu)
 
-;; init-corfu.el ends here
+;;; init-corfu.el ends here
